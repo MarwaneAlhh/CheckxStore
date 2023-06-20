@@ -40,7 +40,7 @@ namespace CheckxxStore
             {
                 connection = new SqlConnection(connectionString);
                 connection.Open();
-                MessageBox.Show("Connexion réussie !");
+                //MessageBox.Show("Connexion réussie !");
                 SqlCommand cmd = new SqlCommand(query, connection);
                 SqlDataReader reader = cmd.ExecuteReader();
                 var result = "";
@@ -52,12 +52,22 @@ namespace CheckxxStore
                     var COUNTRY = reader.GetValue(2);
                     var COMANYCODE = reader.GetValue(3);
 
-                    result += $"STORE_NO : {STORE_NO}, BRANCHNAME : {BRANCHNAME} , COUNTRY : {COUNTRY}, COMPANYCODE : {COMANYCODE} \n";
+                    result += $"{STORE_NO}, {BRANCHNAME} ,{COUNTRY},{COMANYCODE} \n";
+                   string[] row = { (string)STORE_NO.ToString(), (string)BRANCHNAME.ToString(), (string)COUNTRY.ToString(), (string)COMANYCODE.ToString() };
+                   
+                    //var listviewItem= new ListViewItem(result);
+
+                    for(int i=0;i<row.Length; i++)
+                    {
+                        Console.WriteLine(row[i]);
+                    }
+                    //listView1.Items.Add(listviewItem);
                 }
 
                 reader.Close();
 
-                Console.WriteLine(result);
+                //Console.WriteLine(result);
+
                 reader.Close();
                 connection.Close();
 
