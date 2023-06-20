@@ -47,11 +47,12 @@ namespace CheckxxStore
 
                 while (reader.Read())
                 {
-                    var column1Value = reader.GetValue(0); // Remplacez l'index par le bon numéro de colonne (commençant à 0)
-                    var column2Value = reader.GetString(1); // Remplacez l'index par le bon numéro de colonne (commençant à 0)
+                    var STORE_NO = reader.GetValue(0); 
+                    var BRANCHNAME = reader.GetValue(1); 
+                    var COUNTRY = reader.GetValue(2);
+                    var COMANYCODE = reader.GetValue(3);
 
-                    // Ajoutez les valeurs à la chaîne de résultat
-                    result += $"Column1: {column1Value}, Column2: {column2Value}\n";
+                    result += $"STORE_NO : {STORE_NO}, BRANCHNAME : {BRANCHNAME} , COUNTRY : {COUNTRY}, COMPANYCODE : {COMANYCODE} \n";
                 }
 
                 reader.Close();
