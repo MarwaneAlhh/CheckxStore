@@ -8,3 +8,4 @@ C:\Users\malhadda\Desktop\PROJET\Checking_store\V2_C#\CheckxxStore\obj\Debug\Che
 C:\Users\malhadda\Desktop\PROJET\Checking_store\V2_C#\CheckxxStore\obj\Debug\CheckxxStore.csproj.CoreCompileInputs.cache
 C:\Users\malhadda\Desktop\PROJET\Checking_store\V2_C#\CheckxxStore\obj\Debug\CheckxxStore.exe
 C:\Users\malhadda\Desktop\PROJET\Checking_store\V2_C#\CheckxxStore\obj\Debug\CheckxxStore.pdb
+C:\Users\malhadda\Desktop\PROJET\Checking_store\V2_C#\CheckxxStore\obj\Debug\CheckxxStore.Form1.resources
