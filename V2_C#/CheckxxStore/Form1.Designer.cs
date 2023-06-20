@@ -45,11 +45,18 @@
             // listView1
             // 
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(83, 12);
+            this.listView1.Location = new System.Drawing.Point(150, 12);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(610, 399);
+            this.listView1.Size = new System.Drawing.Size(450, 399);
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.Columns.Add("Number of Store");
+            this.listView1.Columns.Add("Shop name");
+            this.listView1.Columns.Add("Country");
+            this.listView1.Columns.Add("Company code");
+
+
             // 
             // Form1
             // 

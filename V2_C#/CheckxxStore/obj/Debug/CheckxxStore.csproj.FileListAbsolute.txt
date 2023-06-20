@@ -9,3 +9,14 @@ C:\Users\malhadda\Desktop\PROJET\Checking_store\V2_C#\CheckxxStore\obj\Debug\Che
 C:\Users\malhadda\Desktop\PROJET\Checking_store\V2_C#\CheckxxStore\obj\Debug\CheckxxStore.exe
 C:\Users\malhadda\Desktop\PROJET\Checking_store\V2_C#\CheckxxStore\obj\Debug\CheckxxStore.pdb
 C:\Users\malhadda\Desktop\PROJET\Checking_store\V2_C#\CheckxxStore\obj\Debug\CheckxxStore.Form1.resources
+C:\Users\malhadda\Desktop\PROJET\Checks-store-home\CheckxStore\V2_C#\CheckxxStore\bin\Debug\CheckxxStore.exe.config
+C:\Users\malhadda\Desktop\PROJET\Checks-store-home\CheckxStore\V2_C#\CheckxxStore\bin\Debug\CheckxxStore.exe
+C:\Users\malhadda\Desktop\PROJET\Checks-store-home\CheckxStore\V2_C#\CheckxxStore\bin\Debug\CheckxxStore.pdb
+C:\Users\malhadda\Desktop\PROJET\Checks-store-home\CheckxStore\V2_C#\CheckxxStore\obj\Debug\CheckxxStore.csproj.AssemblyReference.cache
+C:\Users\malhadda\Desktop\PROJET\Checks-store-home\CheckxStore\V2_C#\CheckxxStore\obj\Debug\CheckxxStore.csproj.SuggestedBindingRedirects.cache
+C:\Users\malhadda\Desktop\PROJET\Checks-store-home\CheckxStore\V2_C#\CheckxxStore\obj\Debug\CheckxxStore.Form1.resources
+C:\Users\malhadda\Desktop\PROJET\Checks-store-home\CheckxStore\V2_C#\CheckxxStore\obj\Debug\CheckxxStore.Properties.Resources.resources
+C:\Users\malhadda\Desktop\PROJET\Checks-store-home\CheckxStore\V2_C#\CheckxxStore\obj\Debug\CheckxxStore.csproj.GenerateResource.cache
+C:\Users\malhadda\Desktop\PROJET\Checks-store-home\CheckxStore\V2_C#\CheckxxStore\obj\Debug\CheckxxStore.csproj.CoreCompileInputs.cache
+C:\Users\malhadda\Desktop\PROJET\Checks-store-home\CheckxStore\V2_C#\CheckxxStore\obj\Debug\CheckxxStore.exe
+C:\Users\malhadda\Desktop\PROJET\Checks-store-home\CheckxStore\V2_C#\CheckxxStore\obj\Debug\CheckxxStore.pdb

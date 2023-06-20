@@ -43,7 +43,6 @@ namespace CheckxxStore
                 //MessageBox.Show("Connexion réussie !");
                 SqlCommand cmd = new SqlCommand(query, connection);
                 SqlDataReader reader = cmd.ExecuteReader();
-                var result = "";
 
                 while (reader.Read())
                 {
@@ -51,19 +50,12 @@ namespace CheckxxStore
                     var BRANCHNAME = reader.GetValue(1); 
                     var COUNTRY = reader.GetValue(2);
                     var COMANYCODE = reader.GetValue(3);
-
-                    result += $"{STORE_NO}, {BRANCHNAME} ,{COUNTRY},{COMANYCODE} \n";
-                   string[] row = { (string)STORE_NO.ToString(), (string)BRANCHNAME.ToString(), (string)COUNTRY.ToString(), (string)COMANYCODE.ToString() };
-                   
-                    //var listviewItem= new ListViewItem(result);
-
-                    for(int i=0;i<row.Length; i++)
-                    {
-                        Console.WriteLine(row[i]);
-                    }
+                    var item = new ListViewItem(new[] { STORE_NO.ToString(), BRANCHNAME.ToString(), COUNTRY.ToString(), COMANYCODE.ToString()});
+                    listView1.Items.Add(item);
                     //listView1.Items.Add(listviewItem);
                 }
-
+                listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+                listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
                 reader.Close();
 
                 //Console.WriteLine(result);
