@@ -42,6 +42,55 @@ namespace CheckxxStore
             all_store_connection.getReader().Close();
             all_store_connection.getConnection().Close();
         }
-           
+
+     
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            panel2.Height = button2.Height;
+            panel2.Top = button2.Top;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            panel2.Height = button3.Height;
+            panel2.Top = button3.Top;
+        }
+
+        private void CheckStore_Click(object sender, EventArgs e)
+        {
+            panel2.Height = CheckStore.Height;
+            panel2.Top = CheckStore.Top;
+        }
+
+        private void textBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = filterStore.Text.Trim().ToLower();
+
+
+            foreach (ListViewItem item in listView1.Items)
+            {
+                bool itemFound = false;
+
+                foreach (ListViewItem.ListViewSubItem subItem in item.SubItems)
+                {
+                    if (subItem.Text.ToLower().Contains(searchText))
+                    {
+                        itemFound = true;
+                        break;
+                    }
+                }
+
+                item.Selected = itemFound;
+
+                if (itemFound)
+                {
+                    item.EnsureVisible();
+                }
+            }
+        }
     }
-}
+    }
+
+
+    
+
