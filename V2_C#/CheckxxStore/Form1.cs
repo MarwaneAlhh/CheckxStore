@@ -20,55 +20,28 @@ namespace CheckxxStore
         public Form1()
         {
             InitializeComponent();
+            InitalizeListViewStoreDetails();
         }
 
-        private void btnConnect_Click(object sender, EventArgs e)
+
+        private void InitalizeListViewStoreDetails()
         {
 
-            string query = "use usicoal\n"
-                + "select WS.STORE_NO, bc.BRANCHNAME ,BC.COUNTRY, BC.COMPANYCODE, BC.COMPANYNAME ,sl.RLAREA, count(WS.WORKSTATION_NAME) as [TILLCOUNT], wg.WRKST_GRP_NO, wg.WRKST_GRP_NAME, BC.INACTIVE, sl.RLBTYP\n"
-                + "from WORKSTATION WS\n"
-                + "join common.dbo.BranchCodes BC on BC.brlocd = WS.store_no\n"
-                + "left join WORKSTATION_GROUP wg on wg.WRKST_GRP_NO = ws.WRKST_GRP_NO\n"
-                + "left join common.dbo.StkLoc sl on sl.RLLOCD = cast(BC.brlocd as varchar)\n"
-                + "    where BC.INACTIVE in (0,1)\n"
-                + "    and BC.COUNTRY not in ('GB','IE','ZA','MY')\n"
-                + "    and BC.BRLOCD not in (976,984,985,986,992,997,998,1996,1998,1994,1995,1991,1999,9999)\n"
-                + "    and BC.country in ('BE','NL','LU','FR','PL','CY','PT','ES','CZ','EE','DE','AT','HU','IS','LT','LV','SK','SI','IE')\n"
-                + "group by WS.STORE_NO, bc.BRANCHNAME, BC.COUNTRY, BC.COMPANYCODE, BC.COMPANYNAME ,sl.RLAREA, wg.WRKST_GRP_NO, wg.WRKST_GRP_NAME, BC.INACTIVE,sl.RLBTYP\n";
-            try
+            Dbo all_store_connection = new Dbo(QuerySql.queryAllStore);
+            while (all_store_connection.getReader().Read())
             {
-                connection = new SqlConnection(connectionString);
-                connection.Open();
-                //MessageBox.Show("Connexion réussie !");
-                SqlCommand cmd = new SqlCommand(query, connection);
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    var STORE_NO = reader.GetValue(0); 
-                    var BRANCHNAME = reader.GetValue(1); 
-                    var COUNTRY = reader.GetValue(2);
-                    var COMANYCODE = reader.GetValue(3);
-                    var item = new ListViewItem(new[] { STORE_NO.ToString(), BRANCHNAME.ToString(), COUNTRY.ToString(), COMANYCODE.ToString()});
-                    listView1.Items.Add(item);
-                    //listView1.Items.Add(listviewItem);
-                }
-                listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
-                listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
-                reader.Close();
-
-                //Console.WriteLine(result);
-
-                reader.Close();
-                connection.Close();
-
+                var STORE_NO = all_store_connection.getReader().GetValue(0);
+                var BRANCHNAME = all_store_connection.getReader().GetValue(1);
+                var COUNTRY = all_store_connection.getReader().GetValue(2);
+                var COMANYCODE = all_store_connection.getReader().GetValue(3);
+                var item = new ListViewItem(new[] { STORE_NO.ToString(), BRANCHNAME.ToString(), COUNTRY.ToString(), COMANYCODE.ToString() });
+                listView1.Items.Add(item);
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erreur lors de la connexion : " + ex.Message);
-            }
+            listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            all_store_connection.getReader().Close();
+            all_store_connection.getConnection().Close();
         }
-
+           
     }
 }
