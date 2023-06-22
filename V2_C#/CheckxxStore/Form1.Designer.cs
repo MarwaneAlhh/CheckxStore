@@ -37,12 +37,23 @@ namespace CheckxxStore
             this.CheckStore = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.filterStore = new System.Windows.Forms.TextBox();
+            this.Print = new System.Windows.Forms.Button();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // listView1
             // 
             this.listView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
             this.listView1.ForeColor = System.Drawing.Color.White;
             this.listView1.FullRowSelect = true;
             this.listView1.HideSelection = false;
@@ -52,17 +63,6 @@ namespace CheckxxStore
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.Columns.Add("Number of Store");
-            this.listView1.Columns.Add("Shop name");
-            this.listView1.Columns.Add("Country");
-            this.listView1.Columns.Add("Company code");
-
-            /*   this.listView1.Columns.Add("Number of Store");
-            this.listView1.Columns.Add("Shop name");
-            this.listView1.Columns.Add("Country");
-            this.listView1.Columns.Add("Company code");
-            */
-
             // 
             // panel1
             // 
@@ -131,18 +131,56 @@ namespace CheckxxStore
             this.filterStore.TabIndex = 4;
             this.filterStore.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
             // 
+            // Print
+            // 
+            this.Print.Location = new System.Drawing.Point(905, 42);
+            this.Print.Name = "Print";
+            this.Print.Size = new System.Drawing.Size(83, 29);
+            this.Print.TabIndex = 5;
+            this.Print.Text = "Print";
+            this.Print.UseVisualStyleBackColor = true;
+            this.Print.Click += new System.EventHandler(this.Print_Click);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Number of Store";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Shop name";
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Country";
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Company code";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(810, 42);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(89, 29);
+            this.button4.TabIndex = 6;
+            this.button4.Text = "Save";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(1000, 500);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.Print);
             this.Controls.Add(this.filterStore);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.listView1);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Name = "Form1";
             this.Text = "CheckDatabase";
@@ -162,6 +200,12 @@ namespace CheckxxStore
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox filterStore;
+        private System.Windows.Forms.Button Print;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.Button button4;
     }
 }
 
