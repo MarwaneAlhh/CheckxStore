@@ -131,22 +131,26 @@ namespace CheckxxStore
             for (int col = 0; col < listView1.Columns.Count; col++)
             {
                
-                worksheet.SetCellValue(1, col + 1, listView1.Columns[col].Text);
-                worksheet.Columns[col].AutoSizeColumn();
+                worksheet.SetCellValue(0, col, listView1.Columns[col].Text);
+                //worksheet.Columns[col].AutoSizeColumn();
+                
                 
             }
 
             for (int row = 0; row < listView1.Items.Count; row++)
             {
+               
                 var item = listView1.Items[row];
                 for (int col = 0; col < item.SubItems.Count; col++)
                 {
-                    worksheet.SetCellValue(row + 2, col + 1, item.SubItems[col].Text);
-                    
+                    worksheet.SetCellValue(row + 1, col , item.SubItems[col].Text);
+                   
                     
                 }
+                
+               
             }
-            
+           
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Title = "Enregistrer le fichier Excel";
             saveFileDialog.Filter = "Fichier Excel (*.xlsx)|*.xlsx";
