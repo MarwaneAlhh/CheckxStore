@@ -42,7 +42,8 @@ namespace CheckxxStore
                 var BRANCHNAME = all_store_connection.getReader().GetValue(1);
                 var COUNTRY = all_store_connection.getReader().GetValue(2);
                 var COMANYCODE = all_store_connection.getReader().GetValue(3);
-                var item = new ListViewItem(new[] { STORE_NO.ToString(), BRANCHNAME.ToString(), COUNTRY.ToString(), COMANYCODE.ToString() });
+                var RLAREA = all_store_connection.getReader().GetValue(5);
+                var item = new ListViewItem(new[] { STORE_NO.ToString(), BRANCHNAME.ToString(), COUNTRY.ToString(), COMANYCODE.ToString(), RLAREA.ToString() });
                 listView1.Items.Add(item);
             }
             listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
@@ -126,32 +127,33 @@ namespace CheckxxStore
             IronXL.WorkBook workbook = WorkBook.Create(ExcelFileFormat.XLSX);
             var worksheet = workbook.CreateWorkSheet("example");
 
-            // Copier les en-têtes de colonne
+            
             for (int col = 0; col < listView1.Columns.Count; col++)
             {
-                worksheet.Cells[1, col + 1].Value = listView1.Columns[col].Text;
+               
+                worksheet.SetCellValue(1, col + 1, listView1.Columns[col].Text);
+                worksheet.Columns[col].AutoSizeColumn();
+                
             }
 
-            // Copier les éléments de la ListView
             for (int row = 0; row < listView1.Items.Count; row++)
             {
                 var item = listView1.Items[row];
                 for (int col = 0; col < item.SubItems.Count; col++)
                 {
-                    worksheet.[row + 2, col + 1].Value = item.SubItems[col].Text;
+                    worksheet.SetCellValue(row + 2, col + 1, item.SubItems[col].Text);
+                    
+                    
                 }
             }
-
+            
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Title = "Enregistrer le fichier Excel";
+            saveFileDialog.Filter = "Fichier Excel (*.xlsx)|*.xlsx";
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string outputPath = saveFileDialog.FileName;
-
-                // Enregistrer le document Excel dans le chemin sélectionné par l'utilisateur
                 workbook.SaveAs(outputPath);
-
-                // Afficher un message de succès
                 MessageBox.Show("Le fichier Excel a été généré avec succès !");
             }
 

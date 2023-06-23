@@ -31,6 +31,10 @@ namespace CheckxxStore
         private void InitializeComponent()
         {
             this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -38,11 +42,8 @@ namespace CheckxxStore
             this.panel2 = new System.Windows.Forms.Panel();
             this.filterStore = new System.Windows.Forms.TextBox();
             this.Print = new System.Windows.Forms.Button();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button4 = new System.Windows.Forms.Button();
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +54,8 @@ namespace CheckxxStore
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
-            this.columnHeader4});
+            this.columnHeader4,
+            this.columnHeader5});
             this.listView1.ForeColor = System.Drawing.Color.White;
             this.listView1.FullRowSelect = true;
             this.listView1.HideSelection = false;
@@ -63,6 +65,22 @@ namespace CheckxxStore
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Number of Store";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Shop name";
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Country";
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Company code";
             // 
             // panel1
             // 
@@ -141,22 +159,6 @@ namespace CheckxxStore
             this.Print.UseVisualStyleBackColor = true;
             this.Print.Click += new System.EventHandler(this.Print_Click);
             // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Number of Store";
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Shop name";
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Country";
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Company code";
-            // 
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(810, 42);
@@ -166,6 +168,10 @@ namespace CheckxxStore
             this.button4.Text = "Save";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "RLAREA";
             // 
             // Form1
             // 
@@ -206,6 +212,7 @@ namespace CheckxxStore
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
     }
 }
 
